@@ -3,8 +3,8 @@ FILE *m_file;
 char *func;
 /**
  * push - add an integer in the stack
- * @nb_number: the number of current line
  * @stack: the header of the stack
+ * @line_number: the current line number
 */
 void push(stack_t **stack, unsigned int line_number)
 {
@@ -40,7 +40,7 @@ void push(stack_t **stack, unsigned int line_number)
 /**
  * check_for_int - check if a string is digit
  * @s: string to check
- * Return 1 if digit else 0
+ * Return: 1 if digit else 0
 */
 int check_for_int(char *s)
 {
@@ -62,8 +62,8 @@ int check_for_int(char *s)
 
 /**
  * pall - print all the values on the stack
- * @nb_number: the number of current line
  * @stack: the header of the stack
+ * @line_number: the current line number
 */
 void pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
