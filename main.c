@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	while (getline(&buf, &len, m_file) != -1)
 	{
 		func = strtok(buf, " \n\t");
-		if (func == NULL || strchr(func, '#') != NULL)
+		if (func == NULL || func[0] == '#')
 			continue;
 		if (get_func(func, nb_number, &stack) == 0)
 		{
