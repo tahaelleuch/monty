@@ -38,7 +38,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	head = *stack;
 	if (head == NULL || head->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short", line_number);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
 		free_list(*stack);
 		free(func);
 		fclose(m_file);
@@ -49,7 +49,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	head->next->n = temp;
 }
 /**
- * add- adds the top two elements of the stack.
+ * add - adds the top two elements of the stack.
  * @stack: the header of the stack
  * @line_number: the current line number
 */
@@ -70,4 +70,14 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack)->n += head->n;
 	(*stack)->prev = NULL;
 	free(head);
+}
+/**
+ * nop - do nothing
+ * @stack: the header of the stack
+ * @line_number: the current line number
+*/
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
 }
