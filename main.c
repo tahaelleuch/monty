@@ -4,7 +4,7 @@ char *func = NULL;
 /**
  * main - The monty program
  * @argc: number of arguments
- * @agrv: array of arguments
+ * @argv: array of arguments
  * Return: Always 0
 */
 int main(int argc, char *argv[])
@@ -25,20 +25,20 @@ int main(int argc, char *argv[])
 		fprintf(stdout, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&buf,  &len, m_file) != -1)
+	while (getline(&buf, &len, m_file) != -1)
 	{
 		func = strtok(buf, " \n\t");
 		if (func == NULL || strchr(func, '#') != NULL)
 			continue;
 		if (get_func(func, nb_number, &stack) == 0)
 		{
-			fprintf(stderr,"L%u: unknown instruction \n",nb_number);
+			fprintf(stderr, "L%u: unknown instruction %s\n", nb_number, func);
 			fclose(m_file);
 			free_list(stack);
 			free(func);
 			exit(EXIT_FAILURE);
 		}
-		nb_number ++;
+		nb_number++;
 	}
 	free_list(stack);
 	free(buf);
