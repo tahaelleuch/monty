@@ -24,3 +24,23 @@ void pchar(stack_t **stack, unsigned int line_number)
 	}
 	printf("%c\n", (*stack)->n);
 }
+/**
+ * pstr - prints the string starting at the top of the stack
+ * @stack: the header of the stack
+ * @line_number: the current line number
+*/
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+	(void)line_number;
+
+	temp = *stack;
+	while (temp != NULL)
+	{
+		if (!isascii(temp->n) || temp->n == 0)
+			break;
+		putchar(temp->n);
+		temp = temp->prev;
+	}
+	putchar('\n');
+}
