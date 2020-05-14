@@ -11,6 +11,7 @@ int get_func(char *func, unsigned int nb_number, stack_t **stack)
 	instruction_t function[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 	size_t i;

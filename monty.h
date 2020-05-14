@@ -44,4 +44,6 @@ void push(stack_t **stack, unsigned int line_number);
 int check_for_int(char *s);
 void pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void free_list(stack_t *stack);
+void pint(stack_t **stack, unsigned int line_number);
+
 #endif
