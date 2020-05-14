@@ -16,7 +16,18 @@ int get_func(char *func, unsigned int nb_number, stack_t **stack)
 		{NULL, NULL}
 	};
 	size_t i;
+	char *valid_op[] = {"push", "pall", "pint", "pop", "end"};
+	int len, j = 0;
 
+	len = sizeof(valid_op) / sizeof(valid_op[0]);
+	while (j < len)
+	{
+		if (strcmp(valid_op[j], func) == 0)
+			break;
+		if (strcmp(valid_op[j], "end") == 0)
+			return (0);
+		j++;
+	}
 	for (i = 0; function->opcode != NULL; i++)
 	{
 		if (strcmp((function + i)->opcode, func) == 0)
