@@ -53,7 +53,7 @@ int check_for_int(char *s)
 			i++;
 			continue;
 		}
-		if (s[i] > '0' && s[i] <= '9')
+		if (s[i] >= '0' && s[i] <= '9')
 			return (1);
 		i++;
 	}
