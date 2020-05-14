@@ -17,11 +17,15 @@ int get_func(char *func, unsigned int nb_number, stack_t **stack)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
+		{"div", _div},
+		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 	size_t i;
 	char *valid_op[] = {"push", "pall", "pint", "pop",
-			    "swap", "add", "nop", "sub", "end"};
+			    "swap", "add", "nop", "sub",
+			    "div", "mul", "mod", "end"};
 	int len, j = 0;
 
 	len = sizeof(valid_op) / sizeof(valid_op[0]);
