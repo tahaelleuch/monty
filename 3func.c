@@ -40,7 +40,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 		if (!isascii(temp->n) || temp->n == 0)
 			break;
 		putchar(temp->n);
-		temp = temp->prev;
+		temp = temp->next;
 	}
 	putchar('\n');
 }
