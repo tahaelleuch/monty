@@ -1,6 +1,4 @@
 #include "monty.h"
-FILE *m_file;
-char *func;
 /**
  * push - add an integer in the stack
  * @stack: the header of the stack
