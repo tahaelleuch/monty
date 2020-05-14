@@ -90,7 +90,7 @@ void mod(stack_t **stack, unsigned int line_number)
 	head = *stack;
 	if (head == NULL || head->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
 		free_list(*stack);
 		free(func);
 		fclose(m_file);
