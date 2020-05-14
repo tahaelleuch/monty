@@ -12,6 +12,7 @@ int get_func(char *func, unsigned int nb_number, stack_t **stack)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 	size_t i;
